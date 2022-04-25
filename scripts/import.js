@@ -101,8 +101,13 @@ async function importPack(packName, importer, targetFolderId) {
 
   const pIndex = await pack.getIndex();
   for await (const entity of pIndex.map((e) => pack.getDocument(e._id))) {
-    importer.importFromCompendium(pack, entity.id, {
-      folder: targetFolderId,
-    });
+    importer.importFromCompendium(
+      pack,
+      entity.id,
+      {
+        folder: targetFolderId,
+      },
+      { keepId: true }
+    );
   }
 }
