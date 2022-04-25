@@ -19,10 +19,12 @@ Hooks.on("init", () => {
 
 Hooks.on("renderJournalSheet", (app, html, options) => {
   const editableElements = html.find(".window-content .editable");
-  const ironStormsJournal = editableElements.find(".coriolis-community-atlas");
+  const atlasJournal = editableElements.find(
+    "div.coriolis-community-atlas-journal-entry"
+  );
   if (
-    ironStormsJournal &&
-    ironStormsJournal.length > 0 &&
+    atlasJournal &&
+    atlasJournal.length > 0 &&
     !editableElements.hasClass("coriolis-core")
   ) {
     editableElements.addClass("coriolis-core");
