@@ -2,6 +2,19 @@ import { moduleScopeKey } from "./constants.js";
 import { getSingleFolder, createFolderPath, FOLDER_TYPES } from "./folders.js";
 
 const ROOT_DIR_FOLDER_NAME = "Coriolis Community Atlas";
+const SUB_FOLDERS = [
+  "Algol",
+  "Altai",
+  "Dabaran",
+  "Mira",
+  "Odacon",
+  "Ordana",
+  "Sadaal",
+  "Sivas",
+  "Pillar",
+  "Zalos",
+  "Zhau",
+];
 
 export async function importContent() {
   let errors = [];
@@ -23,19 +36,7 @@ export async function importContent() {
       "#000000"
     );
 
-    for (const n of [
-      "Algol",
-      "Altai",
-      "Dabaran",
-      "Mira",
-      "Odacon",
-      "Ordana",
-      "Sadaal",
-      "Sivas",
-      "Pillar",
-      "Zalos",
-      "Zhau",
-    ]) {
+    for (const n of SUB_FOLDERS) {
       const folderName = n === "Pillar" ? "The Quadrant of the Pillar" : n;
       const f = await createFolderPath(
         `${ROOT_DIR_FOLDER_NAME}/${folderName}`,
@@ -62,20 +63,10 @@ export async function importContent() {
   } else {
     await createFolderPath(ROOT_DIR_FOLDER_NAME, FOLDER_TYPES.scene, "#000000");
 
-    for (const n of [
-      "Algol",
-      "Altai",
-      "Dabaran",
-      "Mira",
-      "Odacon",
-      "Ordana",
-      "Sadaal",
-      "Sivas",
-      "Zalos",
-      "Zhau",
-    ]) {
+    for (const n of SUB_FOLDERS) {
+      const folderName = n === "Pillar" ? "The Quadrant of the Pillar" : n;
       const f = await createFolderPath(
-        `${ROOT_DIR_FOLDER_NAME}/${n}`,
+        `${ROOT_DIR_FOLDER_NAME}/${folderName}`,
         FOLDER_TYPES.scene,
         "#000000"
       );
