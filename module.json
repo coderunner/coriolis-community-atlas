@@ -10,6 +10,13 @@
   "esmodules": ["./scripts/main.js"],
   "packs": [
     {
+      "name": "credits_journals",
+      "label": "Community Atlas - Credits Journals",
+      "path": "packs/credits_journals.db",
+      "entity": "JournalEntry",
+      "package": "coriolis-community-atlas"
+    },
+    {
       "name": "algol_journals",
       "label": "Community Atlas - Algol Journals",
       "path": "packs/algol_journals.db",

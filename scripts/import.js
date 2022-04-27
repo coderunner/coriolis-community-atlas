@@ -30,7 +30,7 @@ export async function importContent() {
       `Journal folder ${ROOT_DIR_FOLDER_NAME} already exists. Skipping import.`
     );
   } else {
-    await createFolderPath(
+    const folder = await createFolderPath(
       ROOT_DIR_FOLDER_NAME,
       FOLDER_TYPES.journal,
       "#000000"
@@ -49,6 +49,11 @@ export async function importContent() {
         f.id
       );
     }
+    await importPack(
+      `${moduleScopeKey}.credits_journals`,
+      game.journal,
+      folder.id
+    );
   }
 
   let sceneFolder = getSingleFolder(
