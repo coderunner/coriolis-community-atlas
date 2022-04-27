@@ -101,6 +101,13 @@
       "package": "coriolis-community-atlas"
     },
     {
+      "name": "pillar_scenes",
+      "label": "Community Atlas - The Quadrant of the Pillar Scenes",
+      "path": "packs/pillar_scenes.db",
+      "entity": "Scene",
+      "package": "coriolis-community-atlas"
+    },
+    {
       "name": "sadaal_journals",
       "label": "Community Atlas - Sadaal Journals",
       "path": "packs/sadaal_journals.db",
