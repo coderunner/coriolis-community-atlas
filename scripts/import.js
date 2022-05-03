@@ -32,16 +32,14 @@ export async function importContent() {
   } else {
     const folder = await createFolderPath(
       ROOT_DIR_FOLDER_NAME,
-      FOLDER_TYPES.journal,
-      "#000000"
+      FOLDER_TYPES.journal
     );
 
     for (const n of SUB_FOLDERS) {
       const folderName = n === "Pillar" ? "The Quadrant of the Pillar" : n;
       const f = await createFolderPath(
         `${ROOT_DIR_FOLDER_NAME}/${folderName}`,
-        FOLDER_TYPES.journal,
-        "#000000"
+        FOLDER_TYPES.journal
       );
       await importPack(
         `${moduleScopeKey}.${n.toLowerCase()}_journals`,
@@ -66,14 +64,13 @@ export async function importContent() {
       `Scene folder ${ROOT_DIR_FOLDER_NAME} already exists. Skipping import.`
     );
   } else {
-    await createFolderPath(ROOT_DIR_FOLDER_NAME, FOLDER_TYPES.scene, "#000000");
+    await createFolderPath(ROOT_DIR_FOLDER_NAME, FOLDER_TYPES.scene);
 
     for (const n of SUB_FOLDERS) {
       const folderName = n === "Pillar" ? "The Quadrant of the Pillar" : n;
       const f = await createFolderPath(
         `${ROOT_DIR_FOLDER_NAME}/${folderName}`,
-        FOLDER_TYPES.scene,
-        "#000000"
+        FOLDER_TYPES.scene
       );
       await importPack(
         `${moduleScopeKey}.${n.toLowerCase()}_scenes`,
