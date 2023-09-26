@@ -1,37 +1,23 @@
-import { moduleScopeKey } from "./constants.js";
-import { ImportModuleDialog } from "./importDialog.js";
+Hooks.on("renderJournalSheet", (app, html, options) => {
+  if (app?.object?.flags?.core?.sourceId.includes("coriolis-community-atlas")) {
+    const content = html.find(".journal-entry-content");
 
-class ImportFormWrapper extends FormApplication {
-  render() {
-    new ImportModuleDialog().render(true);
+    if (!content.hasClass("coriolis-core")) {
+      content.addClass("coriolis-core");
+    }
   }
-}
-
-Hooks.on("init", () => {
-  game.settings.registerMenu(moduleScopeKey, "import", {
-    name: "Import Compendium",
-    label: "Import",
-    hint: "This will import Coriolis Community Atlas scenes and journal entries to Coriolis Community Atlas folders.",
-    type: ImportFormWrapper,
-    restricted: true,
-  });
 });
 
-Hooks.on("renderJournalSheet", (app, html, options) => {
-  const editableElements = html.find(".window-content .editable");
-  const atlasJournal = editableElements.find(
-    "div.coriolis-community-atlas-journal-entry"
-  );
-  if (
-    atlasJournal &&
-    atlasJournal.length > 0 &&
-    !editableElements.hasClass("coriolis-core")
-  ) {
-    editableElements.addClass("coriolis-core");
-    editableElements
-      .find(".editor-content")
-      .wrap(
-        '<div class="entryBGVTT"><div class="entryContainer"><div class="entryContent"></div></div></div>'
-      );
+Hooks.on("renderJournalPageSheet", (app, html, options) => {
+  const atlasPage = html.find(".coriolis-community-atlas-journal-entry");
+  if (atlasPage && atlasPage.length > 0) {
+    const pageHeader = html.parent().find("header.journal-page-header");
+    if (pageHeader && pageHeader.length > 0) {
+      pageHeader.hide();
+    }
+
+    atlasPage.wrap(
+      '<div class="entryBGVTT"><div class="entryContainer"><div class="entryContent"></div></div></div>'
+    );
   }
 });
