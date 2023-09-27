@@ -1,174 +1,46 @@
 {
-  "name": "coriolis-community-atlas",
+  "id": "coriolis-community-atlas",
   "title": "Coriolis Community Atlas",
   "description": "A compendium for the Coriolis Community Atlas",
-  "version": "1.0.0",
-  "minimumCoreVersion": "9",
-  "compatibleCoreVersion": "9",
-  "author": "Félix-Étienne Trépanier",
-  "system": ["yzecoriolis"],
+  "authors": [
+    {
+      "name": "Félix-Étienne Trépanier"
+    }
+  ],
+  "version": "2.0.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "yzecoriolis",
+        "type": "system",
+        "manifest": "https://github.com/winks-vtt/yze-coriolis/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "3.4.0"
+        }
+      }
+    ]
+  },
   "esmodules": ["./scripts/main.js"],
   "packs": [
     {
-      "name": "credits_journals",
-      "label": "Community Atlas - Credits Journals",
-      "path": "packs/credits_journals.db",
-      "entity": "JournalEntry",
-      "package": "coriolis-community-atlas"
+      "name": "journals",
+      "label": "Community Atlas - Journals",
+      "system": "yzecoriolis",
+      "path": "packs/journals",
+      "type": "JournalEntry",
+      "module": "coriolis-community-atlas"
     },
     {
-      "name": "algol_journals",
-      "label": "Community Atlas - Algol Journals",
-      "path": "packs/algol_journals.db",
-      "entity": "JournalEntry",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "algol_scenes",
-      "label": "Community Atlas - Algol Scenes",
-      "path": "packs/algol_scenes.db",
-      "entity": "Scene",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "altai_journals",
-      "label": "Community Atlas - Altai Journals",
-      "path": "packs/altai_journals.db",
-      "entity": "JournalEntry",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "altai_scenes",
-      "label": "Community Atlas - Altai Scenes",
-      "path": "packs/altai_scenes.db",
-      "entity": "Scene",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "dabaran_journals",
-      "label": "Community Atlas - Dabaran Journals",
-      "path": "packs/dabaran_journals.db",
-      "entity": "JournalEntry",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "dabaran_scenes",
-      "label": "Community Atlas - Dabaran Scenes",
-      "path": "packs/dabaran_scenes.db",
-      "entity": "Scene",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "mira_journals",
-      "label": "Community Atlas - Mira Journals",
-      "path": "packs/mira_journals.db",
-      "entity": "JournalEntry",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "mira_scenes",
-      "label": "Community Atlas - Mira Scenes",
-      "path": "packs/mira_scenes.db",
-      "entity": "Scene",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "odacon_journals",
-      "label": "Community Atlas - Odacon Journals",
-      "path": "packs/odacon_journals.db",
-      "entity": "JournalEntry",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "odacon_scenes",
-      "label": "Community Atlas - Odacon Scenes",
-      "path": "packs/odacon_scenes.db",
-      "entity": "Scene",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "ordana_journals",
-      "label": "Community Atlas - Ordana Journals",
-      "path": "packs/ordana_journals.db",
-      "entity": "JournalEntry",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "ordana_scenes",
-      "label": "Community Atlas - Ordana Scenes",
-      "path": "packs/ordana_scenes.db",
-      "entity": "Scene",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "pillar_journals",
-      "label": "Community Atlas - The Quadrant of the Pillar Journals",
-      "path": "packs/pillar_journals.db",
-      "entity": "JournalEntry",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "pillar_scenes",
-      "label": "Community Atlas - The Quadrant of the Pillar Scenes",
-      "path": "packs/pillar_scenes.db",
-      "entity": "Scene",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "sadaal_journals",
-      "label": "Community Atlas - Sadaal Journals",
-      "path": "packs/sadaal_journals.db",
-      "entity": "JournalEntry",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "sadaal_scenes",
-      "label": "Community Atlas - Sadaal Scenes",
-      "path": "packs/sadaal_scenes.db",
-      "entity": "Scene",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "sivas_journals",
-      "label": "Community Atlas - Sivas Journals",
-      "path": "packs/sivas_journals.db",
-      "entity": "JournalEntry",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "sivas_scenes",
-      "label": "Community Atlas - Sivas Scenes",
-      "path": "packs/sivas_scenes.db",
-      "entity": "Scene",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "zalos_journals",
-      "label": "Community Atlas - Zalos Journals",
-      "path": "packs/zalos_journals.db",
-      "entity": "JournalEntry",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "zalos_scenes",
-      "label": "Community Atlas - Zalos Scenes",
-      "path": "packs/zalos_scenes.db",
-      "entity": "Scene",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "zhau_journals",
-      "label": "Community Atlas - Zhau Journals",
-      "path": "packs/zhau_journals.db",
-      "entity": "JournalEntry",
-      "package": "coriolis-community-atlas"
-    },
-    {
-      "name": "zhau_scenes",
-      "label": "Community Atlas - Zhau Scenes",
-      "path": "packs/zhau_scenes.db",
-      "entity": "Scene",
-      "package": "coriolis-community-atlas"
+      "name": "scenes",
+      "label": "Community Atlas - Scenes",
+      "system": "yzecoriolis",
+      "path": "packs/scenes",
+      "type": "Scene",
+      "module": "coriolis-community-atlas"
     }
   ]
 }
