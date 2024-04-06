@@ -7,7 +7,7 @@
       "name": "Félix-Étienne Trépanier"
     }
   ],
-  "version": "2.0.0",
+  "version": "2.0.2",
   "compatibility": {
     "minimum": "11",
     "verified": "11"
@@ -42,5 +42,7 @@
       "type": "Scene",
       "module": "coriolis-community-atlas"
     }
-  ]
+  ],
+  "manifest": "https://raw.githubusercontent.com/coderunner/coriolis-community-atlas/main/module.json",
+  "download": "https://github.com/coderunner/coriolis-community-atlas/archive/refs/tags/2.0.2.zip"
 }
