@@ -24,23 +24,21 @@
       }
     ]
   },
-  "esmodules": ["./scripts/main.js"],
+  "esmodules": ["scripts/main.js"],
   "packs": [
     {
       "name": "journals",
       "label": "Community Atlas - Journals",
-      "system": "yzecoriolis",
       "path": "packs/journals",
       "type": "JournalEntry",
-      "module": "coriolis-community-atlas"
+      "system": "yzecoriolis"
     },
     {
       "name": "scenes",
       "label": "Community Atlas - Scenes",
-      "system": "yzecoriolis",
       "path": "packs/scenes",
       "type": "Scene",
-      "module": "coriolis-community-atlas"
+      "system": "yzecoriolis"
     }
   ],
   "manifest": "https://raw.githubusercontent.com/coderunner/coriolis-community-atlas/main/module.json",
