@@ -2,7 +2,6 @@ export const moduleName = "coriolis-community-atlas";
 export const showedWelcomePageSettingsKey = "showedWelcome";
 
 Hooks.on("init", async () => {
-  console.log("ici");
   game.settings.register(moduleName, showedWelcomePageSettingsKey, {
     name: "Showed welcome journal entry.",
     scope: "world",
